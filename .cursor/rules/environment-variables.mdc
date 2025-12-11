@@ -1,0 +1,31 @@
+---
+description: Add environment variable
+globs: 
+alwaysApply: false
+---
+# Docker / lando variables
+
+- Prefer setting environment variables through docker/lando to .env files
+
+# Environment Variables
+
+This is how we add environment variables to .env files:
+
+  1. Add to `.env.example`:
+      ```bash
+      NEW_VARIABLE=value_example
+      ```
+
+examples:
+  - input: |
+      # Adding a server-side API key
+      # .env.example
+      API_KEY=your_api_key_here
+
+    output: "Server-side environment variable properly added"
+
+Never add .env.local files to a git repository
+
+# Secrets, urls, and passwords
+
+- Never commit passwords, secrets, or urls to the repository unless they are placeholders

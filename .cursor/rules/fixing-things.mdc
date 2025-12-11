@@ -1,0 +1,9 @@
+---
+description: Fixing project issues
+alwaysApply: true
+---
+# Fixing issues
+
+1. When I tell you to fix something, test it before you tell me its fixed.  If the test fails, try again.  
+
+2. If a docker or lando local dev server exists, use the server (starting it if necessary) to test the fix whenever possible.

@@ -1,0 +1,19 @@
+---
+description: Lando Service boilerplate
+globs:
+alwaysApply: true
+---
+- when working on a project with a .lando.yml file, ensure lando is running (lando start or lando rebuild)
+- use the lando website for testing all data.  The url is <name>.lndo.site, where <name> is the name defined in .lando.yml
+- when i ask you to sync or get the latest data, run lando syncdb from the root of this project, hitting enter on all the prompts.  Do NOT sync the files when I ask for this, always do the syncs one at a time.
+- when i ask you to sync or get the latest files or uploads, run lando syncuploads from the root of this project, hitting enter on all the prompts. Do NOT sync the data when I ask for this, always do the syncs one at a time.
+- it is OK to run any tests against the lando webserver, including inserts and deletes
+- none of the data on the lando webserver is considered production
+- if changes are made to the .lando.yml or .lando.local.yml file,  you will need to rebuild lando with "lando rebuild -y"
+- always have a permanent database port set (that doesn't conflict with other ports on the machine) in the root folder in a .lando.local.yml file.  It should look like:
+services:
+  database:
+    portforward: 60727
+
+where "portforward: 60727" defines the unique portnumber for the site
+- .lando.local.yml files are always ignored in .gitignore

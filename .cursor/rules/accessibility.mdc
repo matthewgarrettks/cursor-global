@@ -1,0 +1,43 @@
+---
+description: Accessibility
+globs: 
+alwaysApply: false
+---
+## Rules
+
+### Accessibility
+- Strive to meet WCAG 2.2 AA standards
+- Don't use `accessKey` attribute on any HTML element.
+- Don't set `aria-hidden="true"` on focusable elements.
+- Don't add ARIA roles, states, and properties to elements that don't support them.
+- Don't use distracting elements like `<marquee>` or `<blink>`.
+- Only use the `scope` prop on `<th>` elements.
+- Don't assign non-interactive ARIA roles to interactive HTML elements.
+- Make sure label elements have text content and are associated with an input.
+- Don't assign interactive ARIA roles to non-interactive HTML elements.
+- Don't assign `tabIndex` to non-interactive HTML elements.
+- Don't use positive integers for `tabIndex` property.
+- Don't include "image", "picture", or "photo" in img alt prop.
+- Don't use explicit role property that's the same as the implicit/default role.
+- Make static elements with click handlers use a valid role attribute.
+- Always include a `title` element for SVG elements.
+- Give all elements requiring alt text meaningful information for screen readers.
+- Make sure anchors have content that's accessible to screen readers.
+- Assign `tabIndex` to non-interactive HTML elements with `aria-activedescendant`.
+- Include all required ARIA attributes for elements with ARIA roles.
+- Make sure ARIA properties are valid for the element's supported roles.
+- Always include a `type` attribute for button elements.
+- Make elements with interactive roles and handlers focusable.
+- Give heading elements content that's accessible to screen readers (not hidden with `aria-hidden`).
+- Always include a `lang` attribute on the html element.
+- Always include a `title` attribute for iframe elements.
+- Accompany `onClick` with at least one of: `onKeyUp`, `onKeyDown`, or `onKeyPress`.
+- Accompany `onMouseOver`/`onMouseOut` with `onFocus`/`onBlur`.
+- Include caption tracks for audio and video elements.
+- Use semantic elements instead of role attributes in JSX.
+- Make sure all anchors are valid and navigable.
+- Ensure all ARIA properties (`aria-*`) are valid.
+- Use valid, non-abstract ARIA roles for elements with ARIA roles.
+- Use valid ARIA state and property values.
+- Use valid values for the `autocomplete` attribute on input elements.
+- Use correct ISO language/country codes for the `lang` attribute.

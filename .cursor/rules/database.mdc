@@ -1,0 +1,12 @@
+---
+description: Database rules boilerplate
+globs:
+alwaysApply: true
+---
+- When creating/updating queries for mysql, only use queries that are compatible with mariadb
+- When creating/updating for mariadb, only use queries that are compatible with mysql
+- if a given sql query will run in mysql but not mariadb, or run in mariadb but not mysql, alert me in the chat, using bold text.
+- If you see obvious database optimization that would improve query speed, such as additional indexes or materialized views, make the suggestion
+- Use the most performant version of the query
+- Use inline documentation to document complex queries well
+- If creating a new view or stored procedure without my express direction, document said query very thoroughly, add documentation about it in the Readme file, and alert me about it in the chat

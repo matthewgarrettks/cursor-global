@@ -1,0 +1,7 @@
+---
+description: General rules
+globs:
+alwaysApply: true
+---
+- when i say use chrome, or use chrome dev tools, i mean use the chrome dev tools mcp server
+- when i say look at a website and I give you a url, open it using chrome dev tools
