@@ -1,0 +1,72 @@
+{
+  "mcpServers": {
+    "github": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "ghcr.io/github/github-mcp-server"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "access_token_goes_here"
+      }
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ]
+    },
+    "context7": {
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "API_key_goes_here"
+      }
+    },
+    "awslabs.aws-documentation-mcp-server": {
+      "command": "uvx awslabs.aws-documentation-mcp-server@latest",
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_DOCUMENTATION_PARTITION": "aws"
+      },
+      "disabled": false,
+      "autoApprove": [],
+      "args": []
+    },
+    "octopus-deploy": {
+      "type": "stdio",
+      "disabled": true,
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "octopusdeploy/mcp-server",
+        "--server-url",
+        "SERVER_url_goes_here",
+        "--api-key",
+        "API_key_goes_here"
+      ]
+    },
+    "awslabs.aws-api-mcp-server": {
+      "command": "uvx awslabs.aws-api-mcp-server@latest",
+      "env": {
+        "AWS_REGION": "us-east-1"
+      },
+      "disabled": true,
+      "autoApprove": [],
+      "args": []
+    },
+    "ios-simulator": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "ios-simulator-mcp"
+      ]
+    }
+  }
+}
