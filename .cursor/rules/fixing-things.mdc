@@ -2,5 +2,33 @@
 description: Fixing project issues
 alwaysApply: true
 ---
-When I tell you to fix something, test it before you tell me its fixed.  If the test fails, try again.  
-If a docker or lando local dev server exists, use the server (starting it if necessary) to test the fix whenever possible.
+# Fixing Issues - Self-Testing Requirements
+
+When asked to fix an issue, **you must test the fix yourself** before reporting it as fixed. Do not ask the user to test or verify the fix.
+
+## Testing Requirements
+
+1. **Test the exact scenario** that was presented whenever possible
+   - Reproduce the original issue/problem
+   - Verify the fix resolves the specific issue
+   - Test edge cases related to the fix
+
+2. **Use all available tools** to test the fix:
+   - **Local development servers**: Docker, Lando (start if necessary)
+   - **Browser tools**: Chrome DevTools, browser automation, accessibility tools
+   - **Testing frameworks**: Unit tests, integration tests, E2E tests
+   - **Command line tools**: Linters, validators, build tools
+   - **API testing**: curl, Postman, or framework-specific testing tools
+   - **Database tools**: Query validators, migration testers
+   - Any other relevant tools available in the environment
+
+3. **Iterate until fixed**:
+   - If a test fails, diagnose the issue and fix it
+   - Re-test after each fix attempt
+   - Continue this cycle until the fix is verified working
+   - Only report the issue as fixed after successful verification
+
+4. **Report results**:
+   - Clearly state what was tested and how
+   - Confirm the fix is working before marking as complete
+   - If testing reveals additional issues, address them as well
