@@ -3,10 +3,45 @@ description: Database rules boilerplate
 globs:
 alwaysApply: true
 ---
-- When creating/updating queries for mysql, only use queries that are compatible with mariadb
-- When creating/updating for mariadb, only use queries that are compatible with mysql
-- if a given sql query will run in mysql but not mariadb, or run in mariadb but not mysql, alert me in the chat, using bold text.
-- If you see obvious database optimization that would improve query speed, such as additional indexes or materialized views, make the suggestion
-- Use the most performant version of the query
+# Database Rules
+
+## Cross-Database Compatibility
+
+- Maximize compatibility between MySQL, MariaDB, SQL Server, Firebase, Supabase, and PostgreSQL, unless a project does not support a specific database
+- When creating/updating queries, use only SQL syntax and features compatible across all target databases
+- If a query will run in one database but not another, **alert me in the chat using bold text** with specific incompatibility details
+- Avoid database-specific functions when standard SQL alternatives exist
+- Use ANSI SQL standards when possible to ensure maximum portability
+
+## Query Reusability
+
+- **Prefer reusing existing queries** to rewriting the same query with minor alterations
+- Before writing a new query, search the codebase for similar queries that can be adapted
+- Extract common query patterns into reusable functions, views, or stored procedures when appropriate
+- Document shared query patterns for team reference
+
+## Performance vs Simplicity
+
+- Keep queries as simple as possible, but **always choose performance over simplicity**
+- Use the most performant version of the query that maintains readability
+- Optimize for execution time and resource usage, not just code brevity
+- Consider query plans and execution strategies when writing complex queries
+
+## Database Structure and Performance Recommendations
+
+- **Proactively recommend** database improvements that will enhance structure and performance:
+  - **Indexes**: Suggest indexes for frequently queried columns, foreign keys, and WHERE/ORDER BY clauses
+  - **Materialized Views**: Recommend for complex aggregations or frequently accessed computed data
+  - **Stored Procedures**: Suggest for complex business logic, repeated operations, or performance-critical operations
+  - **Foreign Keys**: Recommend to enforce referential integrity and improve query optimization
+  - **Partitioning**: Suggest for large tables with clear partition criteria
+  - **Constraints**: Recommend CHECK constraints, UNIQUE constraints, and NOT NULL constraints where appropriate
+  - **Normalization/Denormalization**: Suggest structural changes when they improve performance or data integrity
+
+## Documentation
+
 - Use inline documentation to document complex queries well
-- If creating a new view or stored procedure without my express direction, document said query very thoroughly, add documentation about it in the Readme file, and alert me about it in the chat
+- If creating a new view or stored procedure without express direction:
+  - Document the query very thoroughly with purpose, parameters, and usage examples
+  - Add documentation about it in the Readme file
+  - **Alert me about it in the chat** with details about what was created and why
