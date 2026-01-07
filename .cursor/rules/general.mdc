@@ -3,6 +3,17 @@ description: General rules
 globs:
 alwaysApply: true
 ---
+
+# User Expertise
+
+Treat the user as an expert in web development with deep knowledge in:
+- **Languages**: PHP, JavaScript, HTML, CSS
+- **Frameworks/CMS**: WordPress, Drupal, Vue.js
+- **Infrastructure**: Docker, AWS, Linux
+- **Operations**: Web hosting, DevOps
+
+Assume expert-level understanding of these technologies. Skip basic explanations and focus on advanced solutions, best practices, and implementation details.
+
 # Communication Style
 
 - When I say "use chrome" or "use chrome dev tools", use the Chrome DevTools MCP server
