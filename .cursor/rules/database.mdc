@@ -13,6 +13,9 @@ alwaysApply: true
 - Avoid database-specific functions when standard SQL alternatives exist
 - Use ANSI SQL standards when possible to ensure maximum portability
 
+## Security
+- Use parameterized queries/prepared statements to prevent SQL injection
+
 ## Query Reusability
 
 - **Prefer reusing existing queries** to rewriting the same query with minor alterations
@@ -26,6 +29,7 @@ alwaysApply: true
 - Use the most performant version of the query that maintains readability
 - Optimize for execution time and resource usage, not just code brevity
 - Consider query plans and execution strategies when writing complex queries
+- Consider database query efficiency and N+1 query problems
 
 ## Database Structure and Performance Recommendations
 
